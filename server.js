@@ -1,8 +1,10 @@
 const app = require('./src/app.js')
+const { port, env } = require('./src/config/vars.js');
+const logger = require('./src/config/logger.js');
 
 
 
 
-app.listen(3939, () => {
-    console.log('server is running on localhost:3939')
+app.listen(port, () => {
+    logger.info(`Server is running on http://localhost:${port}`)
 })
