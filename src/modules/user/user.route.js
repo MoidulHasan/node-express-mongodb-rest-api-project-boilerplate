@@ -1,5 +1,5 @@
 const express = require('express')
-
+const userController = require('./user.controller')
 
 const router = express.Router();
 
@@ -7,11 +7,8 @@ const router = express.Router();
 
 // route :  /v1/users/
 router.route('/')
-    .get((req, res, next) => {
-        res.status(200).json({
-            message: 'User route'
-        })
-    })
+    .get(userController.getAll)
+    .post(userController.create)
 
 
 module.exports = router;
